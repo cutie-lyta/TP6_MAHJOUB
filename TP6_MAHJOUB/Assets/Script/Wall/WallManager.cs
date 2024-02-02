@@ -30,8 +30,10 @@ public class WallManager : MonoBehaviour
     private void Start()
     {
         this._cam = FindObjectOfType<Camera>();
-        // this._speed = GameManager.Instance.Speed;
-        // this._frequency = GameManager.Instance.Frequency;
+
+        this._speed = GameManager.Instance.Speed;
+        this._frequency = GameManager.Instance.Frequency;
+
         this._destroyX = this._cam.ScreenToWorldPoint(new Vector3(-100.0f, 0, -this._cam.transform.position.z)).x;
 
         this.StartCoroutine(this.SpawnNewWall());

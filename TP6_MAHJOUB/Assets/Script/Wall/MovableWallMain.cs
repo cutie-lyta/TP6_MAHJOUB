@@ -34,7 +34,7 @@ public class MovableWallMain : WallMain
         this._cam = FindAnyObjectByType<Camera>();
         var position = this._cam.transform.position;
 
-        this._destroyYMinus = this._cam.ScreenToWorldPoint(new Vector3(0, 50.0f, -position.z)).y;
-        this._destroyYMaxi = this._cam.ScreenToWorldPoint(new Vector3(0, Screen.height - 5.0f, -position.z)).y;
+        this._destroyYMinus = this._cam.ScreenToWorldPoint(new Vector3(0, Screen.height / 8, -position.z)).y;
+        this._destroyYMaxi = this._cam.ScreenToWorldPoint(new Vector3(0, Screen.height - (Screen.height / 8), -position.z)).y;
     }
 }
