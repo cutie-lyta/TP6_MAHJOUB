@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         this._playerMain = this.GetComponent<PlayerMain>();
         this._playerMain.OnLose += () =>
         {
+            this._tutorial.enabled = true;
+            this._tutorial.text = "Press Escape to return to the menu, or Space to retry with the same settings";
             this._lost = true;
         };
     }
@@ -59,6 +61,12 @@ public class PlayerMovement : MonoBehaviour
                 GameManager.Instance.Score = 0;
                 SceneManager.LoadScene("SampleScene");
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && this._lost)
+        {
+
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
